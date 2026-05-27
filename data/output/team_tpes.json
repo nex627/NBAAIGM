@@ -1,0 +1,714 @@
+{
+  "source": "hoopsrumors.com",
+  "url": "https://www.hoopsrumors.com/2012/02/outstanding-trade-exceptions.html",
+  "updated": "2026-05-23",
+  "total_teams": 25,
+  "total_tpes": 58,
+  "teams": {
+    "Atlanta Hawks": {
+      "abbrev": "ATL",
+      "tpes": [
+        {
+          "amount_remaining": 6700000,
+          "source_player": "Clint Capela",
+          "source_team": "Rockets",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2026-07-06",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 4503720,
+          "source_player": "Kobe Bufkin",
+          "source_team": "Nets",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2026-09-16",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 1357994,
+          "source_player": "Trae Young",
+          "source_team": "Wizards",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-01-11",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 2349578,
+          "source_player": "Vit Krejci",
+          "source_team": "Trail Blazers",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-01",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 11000000,
+          "source_player": "Luke Kennard",
+          "source_team": "Lakers",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Boston Celtics": {
+      "abbrev": "BOS",
+      "tpes": [
+        {
+          "amount_remaining": 1050226,
+          "source_player": "Kristaps Porzingis",
+          "source_team": "Hawks",
+          "initial_amount": 22531707,
+          "used_amount": 21481481,
+          "used_for": "Nikola Vucevic",
+          "expires": "2026-07-07",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 4721429,
+          "source_player": "Jrue Holiday",
+          "source_team": "Trail Blazers",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2026-07-07",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 8200000,
+          "source_player": "Georges Niang",
+          "source_team": "Jazz",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2026-08-06",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 27678571,
+          "source_player": "Anfernee Simons",
+          "source_team": "Bulls",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 2296274,
+          "source_player": "Chris Boucher",
+          "source_team": "Jazz",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 2546675,
+          "source_player": "Xavier Tillman Sr.",
+          "source_team": "Hornets",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Charlotte Hornets": {
+      "abbrev": "CHA",
+      "tpes": [
+        {
+          "amount_remaining": 2296274,
+          "source_player": "Mason Plumlee",
+          "source_team": "Thunder",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-04",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 8200962,
+          "source_player": "Collin Sexton",
+          "source_team": "Bulls",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-04",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 7000000,
+          "source_player": "Tyus Jones",
+          "source_team": "Mavericks",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Chicago Bulls": {
+      "abbrev": "CHI",
+      "tpes": [
+        {
+          "amount_remaining": 17991071,
+          "source_player": "Kevin Huerter",
+          "source_team": "Pistons",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-03",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 1218007,
+          "source_player": "Coby White",
+          "source_team": "Hornets",
+          "initial_amount": 6218007,
+          "used_amount": 5000000,
+          "used_for": "Nick Richards",
+          "expires": "2027-02-04",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 6670882,
+          "source_player": "Ousmane Dieng",
+          "source_team": "Bucks",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 2221677,
+          "source_player": "Julian Phillips",
+          "source_team": "Timberwolves",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Cleveland Cavaliers": {
+      "abbrev": "CLE",
+      "tpes": [
+        {
+          "amount_remaining": 1000000,
+          "source_player": "Isaac Okoro",
+          "source_team": "Bulls",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2026-07-06",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 6897984,
+          "source_player": "De’Andre Hunter",
+          "source_team": "Kings",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-01",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 10000000,
+          "source_player": "Lonzo Ball",
+          "source_team": "Jazz",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Dallas Mavericks": {
+      "abbrev": "DAL",
+      "tpes": [
+        {
+          "amount_remaining": 20830154,
+          "source_player": "Anthony Davis",
+          "source_team": "Wizards",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 2909520,
+          "source_player": "Jaden Hardy",
+          "source_team": "Wizards",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Denver Nuggets": {
+      "abbrev": "DEN",
+      "tpes": [
+        {
+          "amount_remaining": 6880985,
+          "source_player": "Michael Porter Jr.",
+          "source_team": "Nets",
+          "initial_amount": 17275985,
+          "used_amount": 10395000,
+          "used_for": "Jonas Valanciunas",
+          "expires": "2026-07-08",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 5426400,
+          "source_player": "Dario Saric",
+          "source_team": "Kings",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2026-07-13",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 2221677,
+          "source_player": "Hunter Tyson",
+          "source_team": "Nets",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Detroit Pistons": {
+      "abbrev": "DET",
+      "tpes": [
+        {
+          "amount_remaining": 8677600,
+          "source_player": "Dennis SchrÃ¶der",
+          "source_team": "Kings",
+          "initial_amount": 14104000,
+          "used_amount": 5426400,
+          "used_for": "Dario Saric",
+          "expires": "2026-07-07",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Golden State Warriors": {
+      "abbrev": "GSW",
+      "tpes": [
+        {
+          "amount_remaining": 2221677,
+          "source_player": "Trayce Jackson-Davis",
+          "source_team": "Raptors",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Houston Rockets": {
+      "abbrev": "HOU",
+      "tpes": [
+        {
+          "amount_remaining": 3539760,
+          "source_player": "Cam Whitmore",
+          "source_team": "Wizards",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2026-07-06",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Los Angeles Clippers": {
+      "abbrev": "LAC",
+      "tpes": [
+        {
+          "amount_remaining": 2296274,
+          "source_player": "Chris Paul",
+          "source_team": "Raptors",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 2654880,
+          "source_player": "Kobe Brown",
+          "source_team": "Pacers",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 1314427,
+          "source_player": "Ivica Zubac",
+          "source_team": "Pacers",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Los Angeles Lakers": {
+      "abbrev": "LAL",
+      "tpes": [
+        {
+          "amount_remaining": 500000,
+          "source_player": "Gabe Vincent",
+          "source_team": "Hawks",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Memphis Grizzlies": {
+      "abbrev": "MEM",
+      "tpes": [
+        {
+          "amount_remaining": 28872920,
+          "source_player": "Jaren Jackson Jr.",
+          "source_team": "Jazz",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-03",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Miami Heat": {
+      "abbrev": "MIA",
+      "tpes": [
+        {
+          "amount_remaining": 16834692,
+          "source_player": "Duncan Robinson",
+          "source_team": "Pistons",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2026-07-07",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 5616000,
+          "source_player": "Haywood Highsmith",
+          "source_team": "Nets",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2026-08-17",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Minnesota Timberwolves": {
+      "abbrev": "MIN",
+      "tpes": [
+        {
+          "amount_remaining": 62382,
+          "source_player": "Nickeil Alexander-Walker",
+          "source_team": "Hawks",
+          "initial_amount": 7580900,
+          "used_amount": 7518518,
+          "used_for": null,
+          "expires": "2026-07-06",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 10774038,
+          "source_player": "Mike Conley",
+          "source_team": "Bulls",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-03",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 6576120,
+          "source_player": "Rob Dillingham",
+          "source_team": "Bulls",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "New Orleans Pelicans": {
+      "abbrev": "NOP",
+      "tpes": [
+        {
+          "amount_remaining": 13445122,
+          "source_player": "Kelly Olynyk",
+          "source_team": "Wizards",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2026-07-06",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 4500000,
+          "source_player": "Jose Alvarado",
+          "source_team": "Knicks",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "New York Knicks": {
+      "abbrev": "NYK",
+      "tpes": [
+        {
+          "amount_remaining": 100882,
+          "source_player": "Guerschon Yabusele",
+          "source_team": "Bulls",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 899118,
+          "source_player": "Dalen Terry",
+          "source_team": "Pelicans",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Oklahoma City Thunder": {
+      "abbrev": "OKC",
+      "tpes": [
+        {
+          "amount_remaining": 501669,
+          "source_player": "Dillon Jones",
+          "source_team": "Wizards",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2026-06-29",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 2449522,
+          "source_player": "Ousmane Dieng",
+          "source_team": "Hornets",
+          "initial_amount": 6670882,
+          "used_amount": 4221360,
+          "used_for": "Jared McCain",
+          "expires": "2027-02-04",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Orlando Magic": {
+      "abbrev": "ORL",
+      "tpes": [
+        {
+          "amount_remaining": 7000000,
+          "source_player": "Tyus Jones",
+          "source_team": "Hornets",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-04",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Philadelphia 76ers": {
+      "abbrev": "PHI",
+      "tpes": [
+        {
+          "amount_remaining": 4221360,
+          "source_player": "Jared McCain",
+          "source_team": "Thunder",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-04",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 2296274,
+          "source_player": "Eric Gordon",
+          "source_team": "Grizzlies",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Phoenix Suns": {
+      "abbrev": "PHX",
+      "tpes": [
+        {
+          "amount_remaining": 3628720,
+          "source_player": "Vasilije Micic",
+          "source_team": "Hornets",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2026-06-30",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 5000000,
+          "source_player": "Nick Richards",
+          "source_team": "Bulls",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 2048494,
+          "source_player": "Nigel Hayes-Davis",
+          "source_team": "Bucks",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Sacramento Kings": {
+      "abbrev": "SAC",
+      "tpes": [
+        {
+          "amount_remaining": 4968600,
+          "source_player": "Jonas Valanciunas",
+          "source_team": "Nuggets",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2026-07-13",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 5426400,
+          "source_player": "Dario Saric",
+          "source_team": "Bulls",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-01",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Toronto Raptors": {
+      "abbrev": "TOR",
+      "tpes": [
+        {
+          "amount_remaining": 6383525,
+          "source_player": "Ochai Agbaji",
+          "source_team": "Nets",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Utah Jazz": {
+      "abbrev": "UTA",
+      "tpes": [
+        {
+          "amount_remaining": 25000,
+          "source_player": "Collin Sexton",
+          "source_team": "Hornets",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2026-06-29",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 2215000,
+          "source_player": "John Collins",
+          "source_team": "Clippers",
+          "initial_amount": 26580000,
+          "used_amount": 8200000,
+          "used_for": "Georges Niang",
+          "expires": "2026-07-07",
+          "apron_restricted": false
+        },
+        {
+          "amount_remaining": 2296274,
+          "source_player": "Jock Landale",
+          "source_team": "Hawks",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2027-02-05",
+          "apron_restricted": false
+        }
+      ]
+    },
+    "Washington Wizards": {
+      "abbrev": "WAS",
+      "tpes": [
+        {
+          "amount_remaining": 13445122,
+          "source_player": "Kelly Olynyk",
+          "source_team": "Spurs",
+          "initial_amount": null,
+          "used_amount": null,
+          "used_for": null,
+          "expires": "2026-07-09",
+          "apron_restricted": false
+        }
+      ]
+    }
+  }
+}

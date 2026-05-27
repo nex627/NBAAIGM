@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HoopAI - Trade Simulator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@500;600&amp;family=Sora:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#ffb3b0",
+                        "tertiary": "#e9c400",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e5e2e1",
+                        "inverse-primary": "#385ca8",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-primary-container": "#8fafff",
+                        "background": "#131313",
+                        "tertiary-fixed": "#ffe16d",
+                        "surface-container-highest": "#353534",
+                        "inverse-on-surface": "#313030",
+                        "surface-dim": "#131313",
+                        "secondary-container": "#c40027",
+                        "surface-tint": "#b0c6ff",
+                        "primary": "#b0c6ff",
+                        "surface-container-high": "#2a2a2a",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-secondary-fixed": "#410006",
+                        "on-primary-fixed-variant": "#1b438e",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#3a3000",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary": "#002c70",
+                        "surface-variant": "#353534",
+                        "surface-container": "#201f1f",
+                        "secondary": "#ffb3b0",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary-fixed": "#001945",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#393939",
+                        "secondary-fixed": "#ffdad8",
+                        "outline": "#8e909c",
+                        "on-secondary-container": "#ffd2cf",
+                        "primary-fixed": "#d9e2ff",
+                        "outline-variant": "#434651",
+                        "on-tertiary-container": "#4b3e00",
+                        "on-surface-variant": "#c4c6d3",
+                        "on-surface": "#e5e2e1",
+                        "surface": "#131313",
+                        "primary-fixed-dim": "#b0c6ff",
+                        "tertiary-container": "#c8a900",
+                        "on-secondary-fixed-variant": "#93001b",
+                        "primary-container": "#17408b",
+                        "on-secondary": "#680010"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "xs": "4px",
+                        "base": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "margin": "16px",
+                        "gutter": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "safe-offset-2": "env(safe-area-inset-bottom, 16px)"
+                    },
+                    fontFamily: {
+                        "data-mono": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "headline-md": ["Sora"],
+                        "headline-lg": ["Anton"],
+                        "display-lg": ["Anton"],
+                        "body-md": ["Sora"],
+                        "body-lg": ["Sora"]
+                    },
+                    fontSize: {
+                        "data-mono": ["14px", { lineHeight: "1", fontWeight: "500" }],
+                        "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "600" }],
+                        "headline-md": ["20px", { lineHeight: "1.4", fontWeight: "700" }],
+                        "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "400" }],
+                        "display-lg": ["48px", { lineHeight: "1.1", letterSpacing: "0.02em", fontWeight: "400" }],
+                        "body-md": ["14px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "body-lg": ["16px", { lineHeight: "1.6", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom scrollbar for data dense areas */
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #353534; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #8e909c; }
+        
+        /* Glassmorphism utilities */
+        .glass-panel {
+            background: rgba(28, 27, 27, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .glow-bloom-primary { box-shadow: 0 0 24px -8px rgba(176, 198, 255, 0.2); }
+        .glow-bloom-error { box-shadow: 0 0 24px -8px rgba(255, 180, 171, 0.2); }
+        
+        /* Checkbox styling */
+        .player-checkbox:checked + div {
+            background-color: #b0c6ff;
+            border-color: #b0c6ff;
+        }
+        .player-checkbox:checked + div svg {
+            opacity: 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md h-screen flex flex-col overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin h-16 bg-background/80 backdrop-blur-xl border-b border-white/10">
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 duration-150 flex items-center justify-center p-sm rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sports_basketball</span>
+</button>
+<h1 class="font-display-lg text-headline-lg text-primary tracking-tight">HoopAI</h1>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-150 flex items-center justify-center p-sm rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Main Simulator Canvas -->
+<main class="flex-1 overflow-y-auto pt-24 pb-[140px] px-margin md:px-xl w-full max-w-5xl mx-auto flex flex-col gap-lg">
+<!-- Header & Status -->
+<div class="flex flex-col gap-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">SIMULATE TRADE</h2>
+<!-- Salary Match Status Bar (Glassmorphism) -->
+<div class="glass-panel rounded-lg p-md flex flex-col gap-sm glow-bloom-primary relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container/20 to-transparent opacity-50"></div>
+<div class="relative z-10 flex justify-between items-center">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-headline-md text-headline-md text-on-surface">Salaries Match</span>
+</div>
+<span class="font-data-mono text-data-mono text-primary bg-primary-container/30 px-sm py-xs rounded">+ $1.2M Diff</span>
+</div>
+<div class="relative z-10 w-full h-2 bg-surface-container-highest rounded-full overflow-hidden mt-xs">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 45%;"></div>
+<div class="absolute top-0 left-[45%] h-full w-[10%] bg-surface-tint opacity-80 rounded-r-full"></div>
+</div>
+</div>
+</div>
+<!-- Trade Grid (Bento style asymmetrical layout) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-start">
+<!-- Team 1 Container -->
+<div class="glass-panel rounded-xl flex flex-col relative overflow-hidden group">
+<!-- Atmospheric Background Elements -->
+<div class="absolute top-0 right-0 p-lg opacity-5 pointer-events-none transition-opacity group-hover:opacity-10">
+<span class="font-display-lg text-[120px] leading-none text-on-surface">LAL</span>
+</div>
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-tertiary to-transparent"></div>
+<!-- Team Header -->
+<div class="p-md border-b border-white/5 flex justify-between items-end relative z-10 bg-surface-container/40">
+<div class="flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Lakers Receive</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Incoming Assets</h3>
+</div>
+<div class="text-right flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Total Salary</span>
+<span class="font-data-mono text-data-mono text-tertiary">$45,200,000</span>
+</div>
+</div>
+<!-- Player List (Dense Data) -->
+<div class="flex flex-col p-xs z-10">
+<!-- Player Row 1 -->
+<label class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container-highest/50 cursor-pointer transition-colors border border-transparent hover:border-white/5">
+<div class="relative flex items-center justify-center">
+<input checked="" class="player-checkbox opacity-0 absolute w-full h-full cursor-pointer z-20" type="checkbox"/>
+<div class="w-5 h-5 rounded border border-outline-variant flex items-center justify-center transition-colors relative z-10">
+<svg class="w-3 h-3 text-on-primary opacity-0 transition-opacity" fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<span class="font-body-lg text-body-lg text-on-surface leading-tight">D. DeRozan</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">SF / CHI</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface-variant">$28,600,000</span>
+</label>
+<!-- Player Row 2 -->
+<label class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container-highest/50 cursor-pointer transition-colors border border-transparent hover:border-white/5">
+<div class="relative flex items-center justify-center">
+<input checked="" class="player-checkbox opacity-0 absolute w-full h-full cursor-pointer z-20" type="checkbox"/>
+<div class="w-5 h-5 rounded border border-outline-variant flex items-center justify-center transition-colors relative z-10">
+<svg class="w-3 h-3 text-on-primary opacity-0 transition-opacity" fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<span class="font-body-lg text-body-lg text-on-surface leading-tight">A. Caruso</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">PG / CHI</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface-variant">$9,460,000</span>
+</label>
+<!-- Player Row 3 (Unselected) -->
+<label class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container-highest/50 cursor-pointer transition-colors border border-transparent hover:border-white/5 opacity-60 hover:opacity-100">
+<div class="relative flex items-center justify-center">
+<input class="player-checkbox opacity-0 absolute w-full h-full cursor-pointer z-20" type="checkbox"/>
+<div class="w-5 h-5 rounded border border-outline-variant flex items-center justify-center transition-colors relative z-10 bg-surface-container-lowest">
+<svg class="w-3 h-3 text-on-primary opacity-0 transition-opacity" fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<span class="font-body-lg text-body-lg text-on-surface leading-tight">P. Williams</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">PF / CHI</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface-variant">$9,835,000</span>
+</label>
+</div>
+</div>
+<!-- Team 2 Container -->
+<div class="glass-panel rounded-xl flex flex-col relative overflow-hidden group">
+<!-- Atmospheric Background Elements -->
+<div class="absolute top-0 right-0 p-lg opacity-5 pointer-events-none transition-opacity group-hover:opacity-10">
+<span class="font-display-lg text-[120px] leading-none text-on-surface">CHI</span>
+</div>
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary-container to-transparent"></div>
+<!-- Team Header -->
+<div class="p-md border-b border-white/5 flex justify-between items-end relative z-10 bg-surface-container/40">
+<div class="flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Bulls Receive</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Incoming Assets</h3>
+</div>
+<div class="text-right flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Total Salary</span>
+<span class="font-data-mono text-data-mono text-secondary-fixed-dim">$44,000,000</span>
+</div>
+</div>
+<!-- Player List (Dense Data) -->
+<div class="flex flex-col p-xs z-10">
+<!-- Player Row 1 -->
+<label class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container-highest/50 cursor-pointer transition-colors border border-transparent hover:border-white/5">
+<div class="relative flex items-center justify-center">
+<input checked="" class="player-checkbox opacity-0 absolute w-full h-full cursor-pointer z-20" type="checkbox"/>
+<div class="w-5 h-5 rounded border border-outline-variant flex items-center justify-center transition-colors relative z-10">
+<svg class="w-3 h-3 text-on-primary opacity-0 transition-opacity" fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<span class="font-body-lg text-body-lg text-on-surface leading-tight">D. Russell</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">PG / LAL</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface-variant">$17,300,000</span>
+</label>
+<!-- Player Row 2 -->
+<label class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container-highest/50 cursor-pointer transition-colors border border-transparent hover:border-white/5">
+<div class="relative flex items-center justify-center">
+<input checked="" class="player-checkbox opacity-0 absolute w-full h-full cursor-pointer z-20" type="checkbox"/>
+<div class="w-5 h-5 rounded border border-outline-variant flex items-center justify-center transition-colors relative z-10">
+<svg class="w-3 h-3 text-on-primary opacity-0 transition-opacity" fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<span class="font-body-lg text-body-lg text-on-surface leading-tight">R. Hachimura</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">PF / LAL</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface-variant">$15,700,000</span>
+</label>
+<!-- Player Row 3 -->
+<label class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container-highest/50 cursor-pointer transition-colors border border-transparent hover:border-white/5">
+<div class="relative flex items-center justify-center">
+<input checked="" class="player-checkbox opacity-0 absolute w-full h-full cursor-pointer z-20" type="checkbox"/>
+<div class="w-5 h-5 rounded border border-outline-variant flex items-center justify-center transition-colors relative z-10">
+<svg class="w-3 h-3 text-on-primary opacity-0 transition-opacity" fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<span class="font-body-lg text-body-lg text-on-surface leading-tight">G. Vincent</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">PG / LAL</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface-variant">$11,000,000</span>
+</label>
+</div>
+</div>
+<!-- Add Team Button (Minimalist) -->
+<button class="md:col-span-2 mt-sm py-md border border-dashed border-outline-variant rounded-xl flex items-center justify-center gap-sm text-outline hover:text-primary hover:border-primary/50 transition-colors bg-surface-container-lowest/30 backdrop-blur-sm">
+<span class="material-symbols-outlined">add</span>
+<span class="font-label-caps text-label-caps">Add Third Team</span>
+</button>
+</div>
+</main>
+<!-- Floating Action Area (Above Nav) -->
+<div class="fixed bottom-[80px] left-0 w-full px-margin md:px-xl max-w-5xl md:left-1/2 md:-translate-x-1/2 z-40 pb-sm">
+<button class="w-full py-md rounded-xl bg-gradient-to-r from-primary-container to-primary-fixed-variant border border-primary/20 shadow-[0_4px_24px_-4px_rgba(23,64,139,0.5)] flex items-center justify-center gap-sm text-on-primary-container hover:brightness-110 active:scale-[0.98] transition-all duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-headline-md text-headline-md">Check Trade Balance</span>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center pt-2 pb-safe-offset-2 px-4 bg-surface-container/90 backdrop-blur-xl border-t border-white/10 shadow-lg rounded-t-xl md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-200 gap-1 w-16">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-label-caps">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary bg-primary-container/20 rounded-xl px-4 py-1 active:scale-90 transition-transform duration-200 gap-1 w-20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">swap_horiz</span>
+<span class="font-label-caps text-label-caps">Trade</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-200 gap-1 w-16">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-caps text-label-caps">AI Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-200 gap-1 w-16">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-caps text-label-caps">Players</span>
+</button>
+</nav>
+<!-- Desktop SideNav (Hidden on Mobile, simplified representation to satisfy shell rules if expanded) -->
+<nav class="hidden md:flex fixed left-0 top-16 h-[calc(100vh-64px)] w-20 flex-col items-center py-lg gap-lg bg-surface-container-low/80 backdrop-blur-xl border-r border-white/5 z-40">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors p-2 gap-2">
+<span class="material-symbols-outlined text-2xl">home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary bg-primary-container/20 rounded-xl p-3 gap-2">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">swap_horiz</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors p-2 gap-2">
+<span class="material-symbols-outlined text-2xl">smart_toy</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors p-2 gap-2">
+<span class="material-symbols-outlined text-2xl">groups</span>
+</button>
+</nav>
+<script>
+        // Simple interaction to toggle checkboxes when clicking the row
+        document.querySelectorAll('.player-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => {
+                const label = e.target.closest('label');
+                if(e.target.checked) {
+                    label.classList.remove('opacity-60');
+                    label.classList.add('opacity-100');
+                } else {
+                    label.classList.add('opacity-60');
+                    label.classList.remove('opacity-100');
+                }
+            });
+        });
+    </script>
+</body></html>

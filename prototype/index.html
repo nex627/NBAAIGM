@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>NBA AI经理 · 交易模拟器</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@500;600&family=Sora:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app">
+  <header class="header">
+    <button class="header-icon-btn" id="btn-home" type="button">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sports_basketball</span>
+    </button>
+    <span class="header-title">NBA AI经理</span>
+    <div class="header-actions">
+      <button class="header-icon-btn" id="btn-share" type="button" title="分享">
+        <span class="material-symbols-outlined">share</span>
+      </button>
+      <button class="header-icon-btn" id="btn-ai-settings" type="button" title="设置">
+        <span class="material-symbols-outlined">settings</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="trade-bar" id="trade-bar">
+      <div class="trade-bar-teams" id="trade-bar-teams"></div>
+    </div>
+
+    <div class="team-panel-container" id="team-panel-container"></div>
+  </main>
+
+  <button class="check-trade-fab" id="btn-check-trade" type="button">
+    <span class="material-symbols-outlined">analytics</span>
+    <span>检查交易规则</span>
+  </button>
+
+  <button class="gm-fab" id="btn-gm-chat" type="button" aria-label="GM 聊天">
+    <span class="material-symbols-outlined">forum</span>
+  </button>
+
+  <div id="modal-trade-result" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="trade-result-modal-card">
+      <div class="trade-result-modal-head">
+        <h3>
+          <span class="material-symbols-outlined">analytics</span>
+          交易检查结果
+        </h3>
+        <button class="modal-close" id="modal-trade-result-close" type="button" aria-label="关闭">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div class="trade-result-modal-body" id="trade-result-modal-body"></div>
+      <div class="trade-result-modal-footer">
+        <button class="action-btn ai-btn" id="btn-ai-explain" type="button">
+          <span class="material-symbols-outlined">smart_toy</span>
+          <span>GM 评价</span>
+        </button>
+        <button class="action-btn danger-btn" id="btn-reset" type="button">
+          <span class="material-symbols-outlined">refresh</span>
+          <span>重置交易</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="gm-chat-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="gm-chat-modal-card">
+      <div class="gm-chat-head">
+        <span class="gm-chat-title" id="gm-chat-title">
+          <span class="material-symbols-outlined">forum</span>
+          GM 聊天
+        </span>
+        <select class="gm-chat-team-select" id="gm-chat-team-select">
+          <option value="">请选择球队...</option>
+        </select>
+        <button class="panel-close-btn" id="gm-chat-close" type="button">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div class="gm-chat-body" id="gm-chat-body">
+        <div class="gm-chat-placeholder" id="gm-chat-placeholder">
+          选择一支球队，体验当球队老板的感觉<br>
+          你可以向 AI 总经理提出交易要求、讨论建队方向、评估球员
+        </div>
+      </div>
+      <div class="gm-chat-input-area">
+        <input type="text" class="gm-chat-input" id="gm-chat-input" placeholder="输入你的要求，比如：帮我把哈登交易出去..." autocomplete="off">
+        <button class="gm-chat-send" id="gm-chat-send" type="button">
+          <span class="material-symbols-outlined">send</span>
+        </button>
+      </div>
+      <div class="gm-chat-footer">
+        <span class="gm-chat-usage" id="gm-chat-usage">今日剩余: 20 次</span>
+        <button class="gm-chat-clear" id="gm-chat-clear" type="button">清空对话</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="modal-team" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3>选择球队</h3>
+      <button class="modal-close" id="modal-team-close" type="button" aria-label="关闭">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="modal-body" id="modal-team-body"></div>
+  </div>
+</div>
+
+<div id="modal-dest" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3 id="modal-dest-title">选择目标球队</h3>
+      <button class="modal-close" id="modal-dest-close" type="button" aria-label="关闭">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="modal-body" id="modal-dest-body"></div>
+  </div>
+</div>
+
+<div id="modal-ai-settings" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3>
+        <span class="material-symbols-outlined">settings</span>
+        AI 设置
+      </h3>
+      <button class="modal-close" id="modal-ai-settings-close" type="button" aria-label="关闭">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="ai-settings-section">
+        <label class="ai-settings-label">DeepSeek API Key</label>
+        <input type="password" id="ai-api-key-input" class="ai-settings-input" placeholder="sk-..." autocomplete="off">
+        <p class="ai-settings-hint">API Key 仅存储在浏览器本地，不会上传到任何服务器</p>
+      </div>
+      <button class="ai-settings-save" id="ai-settings-save" type="button">保存</button>
+    </div>
+  </div>
+</div>
+
+<div id="ai-panel-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="ai-result-modal-card">
+    <div class="ai-result-modal-head">
+      <span class="ai-panel-title" id="ai-panel-title">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+        AI 分析
+      </span>
+      <button class="modal-close" id="ai-panel-close" type="button" aria-label="关闭">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="ai-panel-body" id="ai-panel-body">
+      <div class="ai-panel-placeholder">点击上方按钮开始 AI 分析</div>
+    </div>
+    <div class="ai-panel-footer">
+      <span class="ai-usage" id="ai-usage">今日剩余: 20 次</span>
+    </div>
+  </div>
+</div>
+
+<div class="toast-container" id="toast-container"></div>
+
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/state.js"></script>
+<script src="js/rules.js"></script>
+<script src="js/render.js"></script>
+<script src="js/ai-service.js"></script>
+<script src="js/ai-ui.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

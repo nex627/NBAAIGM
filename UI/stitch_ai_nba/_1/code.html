@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HoopAI - Teams</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@500;600&amp;family=Sora:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#ffb3b0",
+                        "tertiary": "#e9c400",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e5e2e1",
+                        "inverse-primary": "#385ca8",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-primary-container": "#8fafff",
+                        "background": "#131313",
+                        "tertiary-fixed": "#ffe16d",
+                        "surface-container-highest": "#353534",
+                        "inverse-on-surface": "#313030",
+                        "surface-dim": "#131313",
+                        "secondary-container": "#c40027",
+                        "surface-tint": "#b0c6ff",
+                        "primary": "#b0c6ff",
+                        "surface-container-high": "#2a2a2a",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-secondary-fixed": "#410006",
+                        "on-primary-fixed-variant": "#1b438e",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#3a3000",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary": "#002c70",
+                        "surface-variant": "#353534",
+                        "surface-container": "#201f1f",
+                        "secondary": "#ffb3b0",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary-fixed": "#001945",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#393939",
+                        "secondary-fixed": "#ffdad8",
+                        "outline": "#8e909c",
+                        "on-secondary-container": "#ffd2cf",
+                        "primary-fixed": "#d9e2ff",
+                        "outline-variant": "#434651",
+                        "on-tertiary-container": "#4b3e00",
+                        "on-surface-variant": "#c4c6d3",
+                        "on-surface": "#e5e2e1",
+                        "surface": "#131313",
+                        "primary-fixed-dim": "#b0c6ff",
+                        "tertiary-container": "#c8a900",
+                        "on-secondary-fixed-variant": "#93001b",
+                        "primary-container": "#17408b",
+                        "on-secondary": "#680010"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "margin": "16px",
+                        "xl": "32px",
+                        "sm": "8px",
+                        "gutter": "16px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "data-mono": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "headline-md": ["Sora"],
+                        "headline-lg": ["Anton"],
+                        "display-lg": ["Anton"],
+                        "body-md": ["Sora"],
+                        "body-lg": ["Sora"]
+                    },
+                    "fontSize": {
+                        "data-mono": ["14px", { "lineHeight": "1", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .pb-safe-offset-2 {
+            padding-bottom: calc(env(safe-area-inset-bottom, 16px) + 8px);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-effect {
+            position: relative;
+        }
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: radial-gradient(circle, rgba(176, 198, 255, 0.15) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .glow-effect:hover::before {
+            opacity: 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md antialiased pt-16 pb-24 md:pb-0 bg-background text-on-background">
+<!-- TopAppBar -->
+<header class="bg-background/90 backdrop-blur-xl text-primary font-headline-md text-headline-md fixed top-0 w-full border-b border-white/10 flat no shadows flex justify-between items-center px-margin h-16 w-full z-50">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-150 p-2 -ml-2 rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">sports_basketball</span>
+</button>
+<div class="font-display-lg text-headline-lg text-primary tracking-tight">HoopAI</div>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-150 p-2 -mr-2 rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow px-margin py-lg max-w-5xl mx-auto w-full flex flex-col gap-xl">
+<!-- Header Section -->
+<section class="flex flex-col gap-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">NBA Teams</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Select a team to begin trade simulation.</p>
+</section>
+<!-- Eastern Conference -->
+<section class="flex flex-col gap-md">
+<h2 class="font-label-caps text-label-caps text-secondary tracking-widest border-b border-white/10 pb-xs uppercase">Eastern Conference</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Team Card -->
+<div class="glass-panel rounded-xl p-md flex items-center justify-between group hover:bg-white/10 transition-colors duration-200">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center overflow-hidden border border-white/10">
+<img class="w-8 h-8 object-contain opacity-100" data-alt="A stylized geometric logo of a basketball team in blue and green colors. Deep dark background, modern sports aesthetic, sharp edges, high contrast lighting. Clean minimal vector graphics style suitable for a high-end UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQJGn1NfbZpc64ooJLSBB68CfYVxa1YAh5mly9XVlInmSK1dR0lSQzzr7qqe6qAiK4g3Pe2CtOaypfvgzMoDviR3Y9nA87iVEwxX2vX5-U0RLe7Ci81sLxEt_h5m8Ope8biUIEpT7uEqdLWuGiaOifRxq7jw-YOTohVuJqYGRYG0UpfBEPiRoekp541axHGt9I_YQOaFjaRxNVGPSW8krljXqBAxkWOXEyBxj7LJXeZI9MlejuzDD5Bvs2SnnD3t4dOq-IZQ0S5X3Z"/>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">Boston</div>
+<div class="font-data-mono text-data-mono text-on-surface-variant">Celtics</div>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-data-mono text-data-mono hover:bg-primary/90 transition-colors active:scale-95 glow-effect shadow-md">
+                        Trade
+                    </button>
+</div>
+<!-- Team Card -->
+<div class="glass-panel rounded-xl p-md flex items-center justify-between group hover:bg-white/10 transition-colors duration-200">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center overflow-hidden border border-white/10">
+<span class="material-symbols-outlined text-secondary opacity-100 text-2xl">sports_basketball</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">Brooklyn</div>
+<div class="font-data-mono text-data-mono text-on-surface-variant">Nets</div>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-data-mono text-data-mono hover:bg-primary/90 transition-colors active:scale-95 glow-effect shadow-md">
+                        Trade
+                    </button>
+</div>
+<!-- Team Card -->
+<div class="glass-panel rounded-xl p-md flex items-center justify-between group hover:bg-white/10 transition-colors duration-200">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center overflow-hidden border border-white/10">
+<img class="w-8 h-8 object-contain opacity-100" data-alt="A stylized geometric logo of a basketball team in red and black colors. Deep dark background, modern sports aesthetic, sharp edges, high contrast lighting. Clean minimal vector graphics style suitable for a high-end UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-bL1WCGoAEkKZzjfP8O2POiz-SD8SyP30zWe73Y9YZUzLS4kN_ro4ssGHW95U-cjz9MW9uxG_CynyaRIrwpVU07jutDiUnH_vJIe27snarRieoMkjN0oUjh1G9hZaYqpANdHZNS0M324JeOdxJ_slxE5taBJ-n586HtGlYPA9g9Vvh7vfrTLIU00ROH_poAfHTcOqmDklGhi_KIwISESDYM7otcam_020hHPZ9nqoEeuU5BGDwvHZViKEjihuPXRLAcXCAJEviWga"/>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">New York</div>
+<div class="font-data-mono text-data-mono text-on-surface-variant">Knicks</div>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-data-mono text-data-mono hover:bg-primary/90 transition-colors active:scale-95 glow-effect shadow-md">
+                        Trade
+                    </button>
+</div>
+</div>
+</section>
+<!-- Western Conference -->
+<section class="flex flex-col gap-md">
+<h2 class="font-label-caps text-label-caps text-tertiary tracking-widest border-b border-white/10 pb-xs uppercase">Western Conference</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Team Card -->
+<div class="glass-panel rounded-xl p-md flex items-center justify-between group hover:bg-white/10 transition-colors duration-200">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center overflow-hidden border border-white/10">
+<span class="material-symbols-outlined text-tertiary opacity-100 text-2xl">sports_basketball</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">Denver</div>
+<div class="font-data-mono text-data-mono text-on-surface-variant">Nuggets</div>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-data-mono text-data-mono hover:bg-primary/90 transition-colors active:scale-95 glow-effect shadow-md">
+                        Trade
+                    </button>
+</div>
+<!-- Team Card -->
+<div class="glass-panel rounded-xl p-md flex items-center justify-between group hover:bg-white/10 transition-colors duration-200">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center overflow-hidden border border-white/10">
+<img class="w-8 h-8 object-contain opacity-100" data-alt="A stylized geometric logo of a basketball team in purple and gold colors. Deep dark background, modern sports aesthetic, sharp edges, high contrast lighting. Clean minimal vector graphics style suitable for a high-end UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmDPrfLKujVmpX4uNPvwBTH5T0_wnhSZ1o-aEW0SnOoDRZt2pXwLTPivVKRY20EGMtY1mYPor_YhXS9MmrzFd9XaFM6TTvbK_lCSOgSvvkjH4XI_W5CdfD1YqUdbeGqSM2_bNUmL-psOb_uYff1vJtxqHqQTwHiV5uLx-DBli1YP42h3T5zKlyzGPqeBKEV-fKmK9Sp7eFC8lXdBXax_2nrCq11FnQFUlkWZMMIGhfDBzvIUAQvJr51LZLUUoIZWu4LumVcTuBGqtQ"/>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">Los Angeles</div>
+<div class="font-data-mono text-data-mono text-on-surface-variant">Lakers</div>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-data-mono text-data-mono hover:bg-primary/90 transition-colors active:scale-95 glow-effect shadow-md">
+                        Trade
+                    </button>
+</div>
+<!-- Team Card -->
+<div class="glass-panel rounded-xl p-md flex items-center justify-between group hover:bg-white/10 transition-colors duration-200">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center overflow-hidden border border-white/10">
+<span class="material-symbols-outlined text-primary opacity-100 text-2xl">sports_basketball</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">Golden State</div>
+<div class="font-data-mono text-data-mono text-on-surface-variant">Warriors</div>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-data-mono text-data-mono hover:bg-primary/90 transition-colors active:scale-95 glow-effect shadow-md">
+                        Trade
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container/90 backdrop-blur-xl text-primary font-label-caps text-label-caps font-display-lg text-headline-lg fixed bottom-0 w-full rounded-t-xl border-t border-white/10 shadow-lg fixed bottom-0 left-0 w-full z-50 flex justify-around items-center pt-2 pb-safe-offset-2 px-4">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-200 p-2 gap-1 w-16">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-caps text-[10px]">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary bg-primary-container/20 rounded-xl px-4 py-1 hover:text-primary transition-colors active:scale-90 transition-transform duration-200 p-2 gap-1 w-16">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">swap_horiz</span>
+<span class="font-label-caps text-[10px]">Trade</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-200 p-2 gap-1 w-16">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 0;">smart_toy</span>
+<span class="font-label-caps text-[10px]">AI Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-200 p-2 gap-1 w-16">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 0;">groups</span>
+<span class="font-label-caps text-[10px]">Players</span>
+</button>
+</nav>
+</body></html>

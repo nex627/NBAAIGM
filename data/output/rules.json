@@ -1,0 +1,326 @@
+{
+  "source": "cbaguide.com (browser-rendered) + Shams Charania/ESPN (2026-27 projections)",
+  "updated": "2026-05-23",
+  "raw_files": [
+    "data/raw/rules_tpe.txt",
+    "data/raw/rules_salary_cap.txt",
+    "data/raw/rules_apron.txt",
+    "data/raw/rules_trade_salary.html",
+    "data/raw/rules_salary_cap.html",
+    "data/raw/rules_apron.html",
+    "data/raw/rules_traderules.html",
+    "data/raw/rules_general_trades.txt",
+    "data/raw/rules_signandtrade.txt",
+    "data/raw/salary_cap_2026_27.txt",
+    "data/raw/rules_minimum_scale.txt",
+    "data/raw/rules_luxury_tax.txt"
+  ],
+  "salary_cap_thresholds": {
+    "2025_26": {
+      "salary_cap": 154657000,
+      "minimum_team_salary": 139191000,
+      "luxury_tax_line": 187895000,
+      "first_apron": 195945000,
+      "second_apron": 207824000
+    },
+    "2026_27": {
+      "salary_cap": 165000000,
+      "minimum_team_salary": 149000000,
+      "luxury_tax_line": 201000000,
+      "first_apron": 209000000,
+      "second_apron": 222000000,
+      "note": "Announced March 2026, $1M lower than prior $166M projection due to local media revenue decline"
+    }
+  },
+  "exceptions": {
+    "2025_26": {
+      "ntmle": { "amount": 14104000, "percentage_of_cap": 9.12, "hard_cap_trigger": "first_apron" },
+      "tmle":  { "amount": 5685000,  "note": "Available below Second Apron. Cannot use for trade/waiver acquisitions.", "hard_cap_trigger": "second_apron" },
+      "room_mle": { "amount": 8781000, "percentage_of_cap": 5.678, "note": "Available only after using cap space." },
+      "bae": { "amount": 5134000, "percentage_of_cap": 3.32, "note": "Cannot use consecutive years. Hard-caps at First Apron." }
+    },
+    "2026_27": {
+      "ntmle": { "amount": 15048000, "percentage_of_cap": 9.12 },
+      "tmle":  { "amount": 6065000,  "note": "Grows at same rate as salary cap" },
+      "room_mle": { "amount": 9369000, "percentage_of_cap": 5.678 },
+      "bae": { "amount": 5478000, "percentage_of_cap": 3.32 }
+    }
+  },
+  "minimum_salary_scale": {
+    "source": "cbaguide.com/resources/minimumscale/",
+    "note": "Minimum salary depends on Years of Service (YOS). 0 YOS contracts can only be 1 year. 1 YOS = max 2 years. 2+ YOS = max 2 years with raises. NBA reimburses team for amount above 2-YOS minimum.",
+    "trade_rule": "Incoming Minimum Exception contracts count as $0 for salary matching purposes.",
+    "2025_26": {
+      "0": [1272870],
+      "1": [2048494, 2150917],
+      "2": [2296274, 2411090, 2525901],
+      "3": [2378870, 2497812, 2616754, 2735698],
+      "4": [2461463, 2584539, 2707612, 2830685, 2953760],
+      "5": [2667947, 2801346, 2934742, 3068140, 3201538],
+      "6": [2874436, 3018158, 3161876, 3305598, 3449321],
+      "7": [3080921, 3234968, 3389014, 3543059, 3697107],
+      "8": [3287409, 3451779, 3616151, 3780524, 3944896],
+      "9": [3303774, 3468962, 3634152, 3799340, 3964529],
+      "10": [3634153, 3815861, 3997570, 4179277, 4360985]
+    },
+    "2026_27": {
+      "0": [1361968],
+      "1": [2191885, 2301477],
+      "2": [2457009, 2579862, 2702709],
+      "3": [2545386, 2672654, 2799922, 2927191],
+      "4": [2633761, 2765452, 2897139, 3028828, 3160518],
+      "5": [2854698, 2997435, 3140169, 3282904, 3425639],
+      "6": [3075641, 3229423, 3383201, 3536984, 3690767],
+      "7": [3296580, 3461409, 3626238, 3791067, 3955897],
+      "8": [3517522, 3693397, 3869275, 4045154, 4221031],
+      "9": [3535032, 3711783, 3888535, 4065286, 4242038],
+      "10": [3888537, 4082964, 4277392, 4470749, 4666246]
+    }
+  },
+  "luxury_tax": {
+    "source": "cbaguide.com/thresholds/luxurytax/",
+    "threshold_formula": "121.5% of Salary Cap",
+    "repeater_definition": "Taxpayer in 3 of the 4 immediately preceding seasons",
+    "tax_bracket_amount": {
+      "description": "Each bracket increases in line with Salary Cap, starting at $5,000,000 in 2023-24",
+      "2025_26": 5685000,
+      "2026_27_estimate": null
+    },
+    "tax_rates": {
+      "bracket_0_to_100": { "non_repeater": 1.00, "repeater": 3.00 },
+      "bracket_100_to_200": { "non_repeater": 1.25, "repeater": 3.25 },
+      "bracket_200_to_300": { "non_repeater": 3.50, "repeater": 5.50 },
+      "bracket_300_to_400": { "non_repeater": 4.75, "repeater": 6.75 },
+      "bracket_400_plus": { "rule": "Tax rates increase by $0.50 for each additional Tax Bracket" }
+    },
+    "brackets_2025_26": [
+      { "bracket": 1, "salary_range": "$187,895,001 – $193,580,000", "rate_non_repeater": 1.00, "liability_non_repeater": 5685000, "rate_repeater": 3.00, "liability_repeater": 17055000 },
+      { "bracket": 2, "salary_range": "$193,580,001 – $199,265,000", "rate_non_repeater": 1.25, "liability_non_repeater": 7106250, "rate_repeater": 3.25, "liability_repeater": 18476250 },
+      { "bracket": 3, "salary_range": "$199,265,001 – $204,950,000", "rate_non_repeater": 3.50, "liability_non_repeater": 19897500, "rate_repeater": 5.50, "liability_repeater": 31267500 },
+      { "bracket": 4, "salary_range": "$204,950,001 – $210,635,000", "rate_non_repeater": 4.75, "liability_non_repeater": 27003750, "rate_repeater": 6.75, "liability_repeater": 38373750 },
+      { "bracket": 5, "salary_range": "$210,635,001 – $216,320,000", "rate_non_repeater": 5.25, "liability_non_repeater": 29846250, "rate_repeater": 7.25, "liability_repeater": 41216250 },
+      { "bracket": 6, "salary_range": "$216,320,001 – $222,005,000", "rate_non_repeater": 5.75, "liability_non_repeater": 32688750, "rate_repeater": 7.75, "liability_repeater": 44058750 },
+      { "bracket": 7, "salary_range": "$222,005,001 – $227,690,000", "rate_non_repeater": 6.25, "liability_non_repeater": 35531250, "rate_repeater": 8.25, "liability_repeater": 46901250 }
+    ]
+  },
+  "traded_player_exceptions": {
+    "aggregated_tpe": {
+      "apron_restriction": "Second Apron",
+      "outgoing_players": "2+",
+      "incoming_players": "1+",
+      "simultaneous": true,
+      "salary_limit": "100% Outgoing Trade Salary + $250,000",
+      "note": "$250k cushion eliminated if landing over First Apron"
+    },
+    "expanded_tpe": {
+      "apron_restriction": "First Apron",
+      "outgoing_players": "1+",
+      "incoming_players": "1+",
+      "simultaneous": true,
+      "salary_limit_tiers": [
+        { "outgoing_less_than": 7250000, "formula": "200% OTS + $250,000" },
+        { "outgoing_range": "$7,250,000 – $29,000,000", "formula": "100% OTS + $8,527,000", "note": "$8,527,000 cushion increases with Salary Cap each season. 2026-27 estimate: ~$9,097,000" },
+        { "outgoing_more_than": 29000000, "formula": "125% OTS" }
+      ],
+      "note": "$250k cushion eliminated if landing over First Apron"
+    },
+    "standard_tpe": {
+      "apron_restriction": "First Apron (time limitation only, not availability)",
+      "outgoing_players": "1",
+      "incoming_players": "1+",
+      "simultaneous": false,
+      "non_simultaneous_use_window": "12 months (shorter if over First Apron)",
+      "salary_limit": "100% Outgoing Trade Salary + $250,000"
+    },
+    "room_tpe": {
+      "apron_restriction": "Salary Cap",
+      "outgoing_players": "1+",
+      "incoming_players": "1+",
+      "simultaneous": true,
+      "salary_limit": "$250,000 over the Salary Cap"
+    }
+  },
+  "apron_rules": {
+    "first_apron_restrictions": [
+      "Bi-Annual Exception (BAE)",
+      "NTMLE",
+      "Sign-and-Trade acquisition",
+      "Sign waived player during Regular Season (waived salary > NTMLE amount)",
+      "Expanded TPE",
+      "Standard TPE time limit (if arose during Regular Season, cannot use after Regular Season)"
+    ],
+    "second_apron_restrictions": [
+      "Aggregated TPE — cannot use Aggregated TPE to acquire players",
+      "Cash-in-Trade — cannot send cash in trades",
+      "TPE created via Sign-and-Trade — cannot use TPE generated from Sign-and-Trade",
+      "TMLE — cannot use Taxpayer Mid-Level Exception",
+      "Salary Aggregation — cannot aggregate (combine) salaries of multiple outgoing players to match a higher incoming salary. Each outgoing player's salary must be matched individually using the applicable TPE",
+      "Buyout Market — cannot sign a player who was waived during the Regular Season if that player's pre-waiver salary exceeded the NTMLE amount",
+      "Sign-and-Trade Acquisition — cannot acquire a player via Sign-and-Trade"
+    ],
+    "second_apron_salary_aggregation_detail": {
+      "rule": "Teams above the Second Apron cannot aggregate outgoing salaries. When sending out multiple players, each player's salary must fit within a separate TPE or be matched individually. This prevents packaging 2+ lower-salary players to absorb a higher-salary player.",
+      "example": "A Second Apron team sending out Player A ($10M) and Player B ($10M) cannot combine them to absorb Player C ($20M). Each must be matched separately: Player A matched via one TPE, Player B matched via another TPE.",
+      "contrast": "Below the Second Apron, the Aggregated TPE allows combining outgoing salaries: Player A ($10M) + Player B ($10M) = $20M outgoing, can absorb up to $20.25M incoming."
+    },
+    "second_apron_buyout_detail": {
+      "rule": "Teams above the Second Apron cannot sign a player during the Regular Season who was waived by another team if that player's salary at the time of waiver exceeded the NTMLE amount ($14,104,000 for 2025-26).",
+      "note": "This restriction does not apply to players waived during the Offseason."
+    },
+    "second_apron_penalties": [
+      "7 years after exceeding Second Apron → 1st Round Pick frozen (cannot be traded)",
+      "2 of 4 subsequent years over Second Apron → frozen pick slides to end of 1st Round",
+      "Fewer than 2 of 4 years → pick unfreezes after 3rd compliant year"
+    ],
+    "hard_cap_rule": "Using a restricted Exception triggers hard cap at that Apron for remainder of Salary Cap Year",
+    "hard_cap_triggers": {
+      "first_apron": [
+        "Using BAE",
+        "Using NTMLE",
+        "Acquiring player via Sign-and-Trade",
+        "Using Expanded TPE"
+      ],
+      "second_apron": [
+        "Using Aggregated TPE",
+        "Using TMLE",
+        "Using TPE created via Sign-and-Trade"
+      ]
+    }
+  },
+  "trade_salary_adjustments": {
+    "incoming": ["Minimum Exception (counts as $0)", "Rookie Scale Extensions (Poison Pill)", "Trade Bonuses"],
+    "outgoing": ["Non-Guaranteed Salary Reduced", "Sign-and-Trade of Bird Rights"],
+    "both": ["Team-Related Bonuses (adjust Team-by-Team basis)"],
+    "count_as_zero": ["Draft Picks/Swaps", "Draft Rights", "Cash-in-Trade", "Two-Way Contracts", "Minimum Exception Contracts (Incoming only)"],
+    "trade_bonus_detail": {
+      "rule": "A Trade Bonus (Trade Kicker) increases the player's salary upon being traded. The bonus is the lesser of: (a) the specified percentage of the remaining guaranteed salary, or (b) the amount that would bring the player's salary to the max allowed under the CBA.",
+      "cap_hit": "The Trade Bonus is charged to the acquiring team's cap. Only the portion of the bonus allocated to the current season counts against the current cap year.",
+      "trade_salary_matching": "The Trade Bonus counts as part of the player's incoming salary for salary matching purposes. The sending team's outgoing salary does NOT include the bonus.",
+      "waiver": "Player can waive all or part of the Trade Bonus to facilitate a trade.",
+      "example": "Evan Mobley has a 15% Trade Bonus on his 5yr/$269M extension. If traded, his incoming salary increases by the bonus amount."
+    },
+    "poison_pill_detail": {
+      "rule": "When a player signs a Rookie Scale Extension, their incoming salary for trade matching is averaged across all remaining years (including extension years) from the date the extension becomes effective (after the last season of the rookie contract).",
+      "timing": "Applies from the July 1 after the player's 4th season through the end of the rookie contract. Once the extension years begin, normal salary matching applies.",
+      "formula": "Incoming Salary = (Remaining Rookie Salary + Total Extension Salary) / (Remaining Rookie Years + Extension Years)",
+      "outgoing": "Outgoing salary is the player's actual current salary (not averaged).",
+      "example": "A player with $10M remaining on rookie deal + $100M/4yr extension = $110M / 5 = $22M incoming salary, but only $10M outgoing."
+    }
+  },
+  "tpe_usage_rules": {
+    "overview": "Trade Player Exceptions (TPEs) allow teams to acquire players without sending back matching salary. Each TPE has specific rules about when it can be used and how much salary it can absorb.",
+    "tpe_in_salary_matching": {
+      "rule": "When a team uses a TPE to absorb an incoming player, the TPE amount serves as the 'outgoing salary' equivalent. The incoming player's salary must fit within the TPE amount.",
+      "simultaneous_trades": "In simultaneous trades, TPEs are generated when a team sends out more salary than it takes back. The TPE equals the difference + $250,000.",
+      "non_simultaneous_trades": "In non-simultaneous trades (trades completed >48 hours apart), a team can generate a TPE equal to the outgoing player's salary + $250,000."
+    },
+    "tpe_interaction_with_apron": {
+      "below_cap": "Teams below the Salary Cap can use Room TPE ($250K above cap) or cap space directly.",
+      "above_cap_below_first_apron": "Can use Standard TPE, Aggregated TPE, and Expanded TPE (with restrictions).",
+      "above_first_apron": "Cannot use Expanded TPE. Standard TPE has time limitation (cannot use after Regular Season if TPE arose during Regular Season).",
+      "above_second_apron": "Cannot use Aggregated TPE. Cannot use TPE created via Sign-and-Trade. Cannot aggregate salaries. Each TPE can only absorb one player's salary individually."
+    },
+    "tpe_expiration": {
+      "standard_tpe": "12 months from creation. If team is above First Apron when TPE is created during Regular Season, TPE expires at end of that Regular Season.",
+      "room_tpe": "Expires when team uses cap space or at end of Salary Cap Year.",
+      "aggregated_tpe": "Created and used within the same simultaneous trade. Does not persist.",
+      "expanded_tpe": "Created and used within the same simultaneous trade. Does not persist."
+    },
+    "tpe_absorption_limit": {
+      "standard_tpe": "Can absorb up to TPE amount + $250,000. Cannot combine with other outgoing salary.",
+      "aggregated_tpe": "Can absorb up to 100% of combined outgoing salaries + $250,000 (below First Apron). $250K cushion eliminated if landing over First Apron.",
+      "expanded_tpe": "Uses tiered formula based on outgoing salary (see traded_player_exceptions.expanded_tpe.salary_limit_tiers)."
+    }
+  },
+  "general_trade_rules": {
+    "roster_spot_requirement": "If acquiring more players than sending out, must have open Roster Spot BEFORE executing the trade (even if immediately waiving acquired player).",
+    "tradeable_assets_2_team": ["Player Contracts", "Draft Pick (protected up to 55)", "Draft rights to NBA Prospect", "Swap Rights", "Cash-in-Trade (>= $110,000)"],
+    "tradeable_assets_3plus_team": ["Player Contract", "Draft Pick that actually conveys", "Draft Rights to NBA Prospect", "Cash-in-Trade (>= $1,100,000)"],
+    "touch_rule": "3+ team trades: each team must touch (send or receive asset) at least 2 other teams.",
+    "trade_deadline": "No trades from 2nd Thursday before All-Star Game until after Regular Season. Playoff teams cannot trade playoff roster players until eliminated.",
+    "july_moratorium": "No trades July 1-6.",
+    "option_year_restriction": "If contract could be last season based on Option/ETO, player cannot be traded after Regular Season unless Option exercised or ETO declined.",
+    "draft_pick_trade_deadline": "Deadline for trading current season's Draft Picks: 2:00 PM ET on Draft day.",
+    "trade_call": "Notify League 2+ hours before trade. Must notify by 6:00 PM ET Friday for weekend trades.",
+    "physical_exam_contingency": "Any trade can be conditioned on player passing physical. Failed physical = trade rescinded or terms adjusted.",
+    "public_trade_demand": "Fine/suspension for publicly demanding trade; max fine $150,000."
+  },
+  "draft_pick_rules": {
+    "stepien_rule_7year": "Picks can only be traded up to the 7th Draft following the trade date.",
+    "stepien_rule_consecutive_1st": "Team must never have possibility of missing a 1st Round Pick in two consecutive seasons. Can own another team's pick to satisfy.",
+    "pick_protections": "Pick conveyance can be contingent on pick order. Additional future contingencies allowed if pick doesn't convey.",
+    "deferral_options": "One-time option to defer pick by one year. Cannot use both deferral and protection simultaneously.",
+    "conditional_language_limit": "Only 2 conditional stepien-safe conveyances in effect at one time."
+  },
+  "cash_in_trade": {
+    "2025_26": 7964320,
+    "2026_27": 8497500,
+    "percentage_of_cap": 5.15,
+    "rule": "Sent and received amounts accounted separately (not net). No effect on Team Salary.",
+    "conditional_cash_timing": "Accounted in year trade was consummated, not when exchanged."
+  },
+  "no_trade_clause": {
+    "express_ntc": "Requires 8+ YOS and 4+ YOS for current team. Contract can contain prohibition/limitation on trading. Can only be included in a NEW contract signed as a free agent, NOT in an extension.",
+    "automatic_ntc": "Triggers when Bird Rights would be downgraded by trade (1-year deal with Bird Rights potential). Player can waive at signing or anytime.",
+    "one_year_veto": "Players who re-sign with their team on a 1-year contract (or 2-year with option) receive automatic veto power for that season. If they accept a trade, Bird/Early Bird rights downgrade to Non-Bird rights at season end.",
+    "offer_sheet_matched": "Players whose offer sheet was matched by their original team have veto power for one full calendar year.",
+    "waiver_option": "Under the 2023 CBA, players with one-year veto rights can voluntarily waive that protection at signing.",
+    "players_2025_26": {
+      "express_ntc": [
+        {"name": "LeBron James", "team": "LAL", "since": "2024 contract"},
+        {"name": "Damian Lillard", "team": "POR", "since": "2025 contract"}
+      ],
+      "one_year_veto": [
+        {"name": "Giannis Antetokounmpo", "team": "MIL", "reason": "1-year deal"},
+        {"name": "Nicolas Batum", "team": "LAC", "reason": "1-year deal"},
+        {"name": "Collin Gillespie", "team": "PHX", "reason": "1-year deal"},
+        {"name": "Joe Ingles", "team": "MIN", "reason": "1-year deal"},
+        {"name": "Quentin Grimes", "team": "PHI", "reason": "1-year deal"},
+        {"name": "Aaron Holiday", "team": "HOU", "reason": "1-year deal"},
+        {"name": "James Harden", "team": "LAC", "reason": "1-year deal"},
+        {"name": "Jericho Sims", "team": "MIL", "reason": "1-year deal"},
+        {"name": "Kyle Lowry", "team": "PHI", "reason": "1-year deal"},
+        {"name": "Gary Payton II", "team": "GSW", "reason": "1-year deal"},
+        {"name": "Landry Shamet", "team": "NYK", "reason": "1-year deal"},
+        {"name": "Jae'Sean Tate", "team": "HOU", "reason": "1-year deal"},
+        {"name": "Fred VanVleet", "team": "HOU", "reason": "1-year deal"},
+        {"name": "Cam Thomas", "team": "BKN", "reason": "1-year deal"},
+        {"name": "Moritz Wagner", "team": "ORL", "reason": "1-year deal"}
+      ],
+      "waived_veto": [
+        {"name": "Eric Gordon", "team": "PHI"},
+        {"name": "Jeff Green", "team": "HOU"},
+        {"name": "Jaxson Hayes", "team": "LAL"},
+        {"name": "Chris Livingston", "team": "MIL"},
+        {"name": "Jordan McLaughlin", "team": "SAS"},
+        {"name": "Kevin Porter Jr.", "team": "MIL"},
+        {"name": "Taurean Prince", "team": "MIL"},
+        {"name": "Garrett Temple", "team": "TOR"},
+        {"name": "Gary Trent Jr.", "team": "MIL"}
+      ]
+    }
+  },
+  "bird_rights_in_trades": {
+    "general": "Receiving Team retains same Bird Rights Sending Team had.",
+    "exception_downgrade": "Bird Rights don't transfer if: 1-year contract (excl. Option), would be Bird/EB Free Agent after, and traded without exercising Option for 2nd year. Player treated as Free Agent signing but receives Automatic NTC."
+  },
+  "extension_limitation_after_trade": "6-month wait before signing acquired player to Extension with: 5 Seasons, raises/decreases > 5%, or renegotiation.",
+  "resigning_traded_waived_player": "Sending Team can't re-sign traded-then-waived player until earlier of: 1 year after trade or July 1 following contract's last season.",
+  "sign_and_trade": {
+    "requirements": [
+      "Signed prior to Regular Season",
+      "Player is Free Agent, finished prior season on Sending Team's Roster",
+      "Contract at least 3 Seasons (excluding Options), max 4",
+      "NTMLE and Room MLE not used",
+      "First Season fully guaranteed",
+      "Acquiring Team has sufficient Room for Salary + Unlikely Bonuses"
+    ],
+    "max_salary_5th_year_player": "Limited to 25% of Salary Cap even if Higher Max Criteria eligible"
+  },
+  "extend_and_trade": {
+    "eligibility": "Cannot be signed from last day of Regular Season (last Season) through June 30th.",
+    "salary_limit": "Greater of: 120% of Regular Salary in last year, OR 120% of EAPS",
+    "raise_limit": "5% per year (instead of 8% for regular Extensions)",
+    "max_years": "4 Seasons (including remaining original term)"
+  }
+}
