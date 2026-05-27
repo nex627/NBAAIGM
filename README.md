@@ -60,9 +60,7 @@ nbatrade/
 │   ├── team-profile-loader.ts
 │   └── prompts/             ← 9 个 AI prompt 模块
 ├── data/
-│   ├── scraper/             ← Python 爬虫（合同、规则、新闻）
 │   ├── output/              ← 结构化 JSON 数据
-│   ├── raw/                 ← 原始爬取数据
 │   ├── scripts/             ← 数据校验脚本
 │   └── team-profiles/       ← 球队档案（Markdown）
 ├── docs/                    ← 设计文档
@@ -98,16 +96,9 @@ $env:DEEPSEEK_API_KEY="sk-your-key"; node server.js
 DEEPSEEK_API_KEY=sk-your-key node server.js
 ```
 
-### 数据更新
+### 数据
 
-```bash
-cd data/scraper
-pip install -r requirements.txt
-python crawl_contracts.py   # 爬取合同数据
-python crawl_rules.py       # 爬取 CBA 规则
-python crawl_tpes.py        # 爬取 TPE 数据
-python crawl_players.py     # 爬取球员数据
-```
+项目内置结构化 JSON 数据（合同、规则、TPE、球员信息），位于 `data/output/` 目录。
 
 ## 技术栈
 
@@ -117,8 +108,7 @@ python crawl_players.py     # 爬取球员数据
 | 生产版 | Next.js + TypeScript + Tailwind CSS |
 | 规则引擎 | 纯 TypeScript（不依赖 AI 判断） |
 | AI 层 | LLM API（DeepSeek / OpenAI） |
-| 数据层 | 静态 JSON（爬取后生成） |
-| 爬虫 | Python + BeautifulSoup |
+| 数据层 | 静态 JSON |
 
 ## 规则引擎
 
@@ -137,7 +127,6 @@ python crawl_players.py     # 爬取球员数据
 - 所有商标归各自权利人所有
 - 球队标识使用纯色圆形 + 队名缩写，不使用任何官方 logo
 - 不使用球员照片，用首字母头像替代
-- 数据来源：basketball-reference.com, spotrac.com, hoopsrumors.com
 
 ## License
 
